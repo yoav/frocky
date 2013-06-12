@@ -24,7 +24,9 @@ buildNumber = properties?.buildNumber
 File configFile = file('src/main/resources/greeting.txt')
 configFile.setText("BUILD NUMBER: $buildNumber")
 
-
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.6'
+}
 class Version {
     String originalVersion
     String thisVersion
