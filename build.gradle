@@ -9,11 +9,11 @@ repositories {
     }
 }
 
-def globalVersion = new Version(currentVersion)
+//def globalVersion = new Version(currentVersion)
 allprojects {
     group = 'frockyIII'
-    version = globalVersion
-    status = version.status
+    version = currentVersion
+//    status = version.status
 
 }
 dependencies {
