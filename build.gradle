@@ -21,7 +21,7 @@ dependencies {
     compile group: 'log4j', name: 'log4j', version: '1.2.15', ext: 'jar'
 }
 buildNumber = properties?.buildNumber
-File configFile = file('src/main/resources/greeting.txt')
+File configFile = file(new File('src/main/resources/greeting.txt'))
 configFile.setText("BUILD NUMBER: $buildNumber")
 
 task wrapper(type: Wrapper) {
