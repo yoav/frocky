@@ -1,7 +1,7 @@
 import java.text.SimpleDateFormat
 
 apply plugin: 'war'
-//apply plugin: 'jetty'
+apply plugin: 'maven'
 
 repositories {
     maven {
@@ -23,6 +23,15 @@ dependencies {
 buildNumber = properties?.buildNumber
 File configFile = file(new File('src/main/resources/greeting.txt'))
 configFile.setText("BUILD NUMBER: $buildNumber")
+
+configure(install.repositories.mavenInstaller) {
+    pom.project {
+        issueManagement {
+            system 'jira'
+            url 'http://issues.jfrog.org/jira/browse/MAP'
+        }
+    }
+}
 
 task wrapper(type: Wrapper) {
     gradleVersion = '1.6'
