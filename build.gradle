@@ -12,7 +12,7 @@ repositories {
 
 //def globalVersion = new Version(currentVersion)
 allprojects {
-    group = 'frockyIII'
+    group = 'frocky'
     version = currentVersion
 //    status = version.status
 
